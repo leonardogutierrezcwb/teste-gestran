@@ -9,15 +9,22 @@ A estrutura contém exemplos práticos de **Playwright, Robot Framework, Postman
 
 Antes de executar os testes, garanta que você tenha instalado:
 
-- **Node.js** (>= 14.x)  
+- **Node.js** (>= 18.x recomendado)  
 - **npm** (instalado junto com Node.js)  
 - **Python 3.x** (para executar Robot Framework)  
 - **Robot Framework** (caso queira rodar a suíte `reqres_api.robot`)  
 
-Para instalar o Robot Framework:  
-```bash
-pip install robotframework
-```
+### Instalações adicionais
+
+- Robot Framework Requests (para testes de API com Robot):  
+  ```bash
+  pip install robotframework-requests
+  ```
+
+- Navegadores do Playwright:  
+  ```bash
+  npx playwright install
+  ```
 
 ---
 
@@ -32,6 +39,11 @@ pip install robotframework
 2. Instale as dependências do projeto:
    ```bash
    npm install
+   ```
+
+3. Instale os navegadores usados pelo Playwright:
+   ```bash
+   npx playwright install
    ```
 
 ---
@@ -61,7 +73,11 @@ robot reqres_api.robot
 
 1. Abra o Postman  
 2. Importe o arquivo **desafio4.json**  
-3. Execute a collection e verifique os testes embutidos  
+3. Configure o header de autenticação, se necessário:  
+   ```
+   x-api-key: reqres-free-v1
+   ```
+4. Execute a collection e verifique os testes embutidos  
 
 ### 🔹 SQL
 
@@ -69,7 +85,7 @@ No arquivo **Desafio3_consultas.sql** estão disponíveis queries para:
 - Relacionar produtos e fornecedores  
 - Relacionar clientes, vendedores e formas de pagamento  
 
-Execute em qualquer banco compatível para validação.
+Execute em qualquer banco compatível para validação (MySQL, PostgreSQL, etc.) garantindo que as tabelas existam.
 
 ---
 
