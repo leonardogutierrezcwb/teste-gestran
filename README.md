@@ -60,3 +60,19 @@ npm run test:headed
 
 # Gerar e abrir relatório em HTML
 npm run test:with-report
+```
+
+### Robot Framework
+```bash
+# Executar testes da suite Robot
+robot reqres_api.robot
+```
+
+### Postman
+- Importar o arquivo **desafio4.json** no Postman.  
+- Executar os requests na collection e validar os testes embutidos.
+
+---
+
+✍️ **Autor**: Leonardo Gutierrez  
+📌 Foco: **QA | Testes Automatizados | Testes Manuais | API | SQL | BDD**
