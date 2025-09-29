@@ -1,0 +1,74 @@
+Cenário 1: Cadastro com sucesso
+
+Dado que o usuário está na página de cadastro
+E preenche "Login" com "usuario_valido"
+E preenche "First Name" com "João"
+E preenche "Last Name" com "Silva"
+E preenche "Password" com "SenhaForte@123"
+E preenche "Confirm Password" com "SenhaForte@123"
+Quando clicar em "Register"
+Então o sistema deve registrar o usuário com sucesso
+E redirecionar para a página inicial ou de boas-vindas
+
+Cenário 2: Campo Login em branco
+
+Dado que o usuário está na página de cadastro
+E deixa "Login" em branco
+E preenche os demais campos corretamente
+Quando clicar em "Register"
+Então deve ser exibida a mensagem "Login is required"
+E o cadastro não deve ser concluído
+
+
+Cenário 3: Login com mais de 50 caracteres
+
+Dado que o usuário está na página de cadastro
+E preenche "Login" com um valor maior que 50 caracteres
+E preenche os demais campos corretamente
+Quando clicar em "Register"
+Então deve ser exibida a mensagem "Login cannot be more than 50 characters long"
+E o cadastro não deve ser concluído
+
+Cenário 4: Campo First Name vazio
+
+Dado que o usuário está na página de cadastro
+E deixa "First Name" em branco
+E preenche os demais campos corretamente
+Quando clicar em "Register"
+Então deve ser exibida a mensagem "First Name is required"
+E o cadastro não deve ser concluído
+
+Cenário 5: Campo Last Name vazio (mensagem incorreta – bug)
+
+Dado que o usuário está na página de cadastro
+E deixa "Last Name" em branco
+E preenche os demais campos corretamente
+Quando clicar em "Register"
+Então deve ser exibida uma mensagem de erro
+Mas atualmente o sistema exibe incorretamente "First Name is required"
+
+Cenário 6: Campo Password vazio
+
+Dado que o usuário está na página de cadastro
+E deixa "Password" em branco
+E preenche os demais campos corretamente
+Quando clicar em "Register"
+Então deve ser exibida a mensagem "Password is required"
+
+
+Cenário 7: Senha e Confirmação diferentes
+
+Dado que o usuário está na página de cadastro
+E preenche "Password" com "Senha123!"
+E preenche "Confirm Password" com "Senha321!"
+E preenche os demais campos corretamente
+Quando clicar em "Register"
+Então deve ser exibida a mensagem "Passwords do not match"
+E o cadastro não deve ser concluído
+
+
+Cenário 8: Botão Register desabilitado
+
+Dado que o usuário está na página de cadastro
+Quando os campos obrigatórios não estiverem preenchidos corretamente
+Então o botão "Register" deve permanecer desabilitado
